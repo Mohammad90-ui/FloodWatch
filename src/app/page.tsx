@@ -1,9 +1,9 @@
-import ProjectRoadmap from "@/components/ProjectRoadmap";
+import DashboardOverview from '@/components/dashboard/DashboardOverview';
 
 export default function Home() {
   return (
     <main>
-      <ProjectRoadmap />
+      <DashboardOverview />
     </main>
   );
 }
