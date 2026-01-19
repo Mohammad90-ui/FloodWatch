@@ -16,7 +16,7 @@ const navigation = [
   { name: 'Districts', href: '/districts', icon: MapPin },
   { name: 'Alerts', href: '/alerts', icon: Bell },
   { name: 'Weather', href: '/weather', icon: CloudRain },
-  { name: 'Settings', href: '/settings', icon: Settings },
+  { name: 'Roadmap', href: '/roadmap', icon: Settings }, // Temporary placement
 ];
 
 export default function Sidebar() {
@@ -39,16 +39,16 @@ export default function Sidebar() {
               key={item.name}
               href={item.href}
               className={cn(
-                'group flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                'group flex items-center px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ease-in-out',
                 isActive
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  ? 'bg-primary/15 text-primary shadow-sm ring-1 ring-primary/20'
+                  : 'text-muted-foreground hover:bg-muted/80 hover:text-foreground hover:translate-x-1'
               )}
             >
               <item.icon
                 className={cn(
-                  'mr-3 h-5 w-5 flex-shrink-0',
-                  isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-foreground'
+                  'mr-3 h-5 w-5 flex-shrink-0 transition-colors duration-200',
+                  isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-primary/80'
                 )}
                 aria-hidden="true"
               />
@@ -60,8 +60,8 @@ export default function Sidebar() {
 
       {/* Footer / User Info */}
       <div className="border-t border-border p-4">
-        <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+        <div className="flex items-center gap-3 p-2 rounded-lg transition-colors hover:bg-muted/50 cursor-pointer">
+          <div className="h-9 w-9 rounded-full bg-gradient-to-tr from-primary/20 to-primary/40 flex items-center justify-center text-primary font-bold shadow-inner">
             JD
           </div>
           <div className="flex flex-col">

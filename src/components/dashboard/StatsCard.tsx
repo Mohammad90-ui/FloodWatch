@@ -16,7 +16,10 @@ interface StatsCardProps {
 
 export function StatsCard({ title, value, description, icon: Icon, trend, className }: StatsCardProps) {
   return (
-    <div className={cn("rounded-xl border border-border bg-card p-6 shadow-sm", className)}>
+    <div className={cn(
+      "rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:bg-accent/5",
+      className
+    )}>
       <div className="flex items-center justify-between space-y-0 pb-2">
         <h3 className="tracking-tight text-sm font-medium text-muted-foreground">{title}</h3>
         <Icon className="h-4 w-4 text-muted-foreground" />
